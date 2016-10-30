@@ -9,7 +9,6 @@ var todoBtn = document.getElementById('todoBtn').addEventListener('click', addTo
 
 
 var todos = []
-//todos = document.getElementById('todos')
 //^^Global variable for my array that I will push my input into
 
 function handleEnterKey(event) {
@@ -19,22 +18,21 @@ function handleEnterKey(event) {
 }
 //^^As soon as the enter key is pressed I will run my addTodoItem function
 
+
 function addTodoItem() {
-    var todoItemValue = document.getElementById('todoList').value
-    todos.push(todoItemValue)
-    document.getElementById('todoList').value = ''
+    var todoItemValue = todoInput.value
+//created new var scoped to this function. takes the value of global variable todoInput's value
+    todoInput.value = ''
+// wrapping any new input with '' ;; gift wrapping for my global array todos
+    todos.push({
+        description: todoItemValue,
+    })
+// pushing the inputvalue into todos array
+    console.log(todos)
     renderView(todos)
-
-    // var todoItemValue = todoInput.value
-    // todoInput.value = ''
-    // todos.push({
-    //     description: todoItemValue,
-    // })
-    // console.log(todos)
-    // renderView(todos)
-    //var todos = []
+//renderView is the React function that should display my array (or any component that is part of this array)
+    var todos = []
 }
-
 
 var renderView = (data) => {
     ReactDOM.render(
@@ -45,3 +43,11 @@ var renderView = (data) => {
 
 //console.log(renderView)
 //renderView(todos)
+
+
+//function addTodoItem() {
+    // var todoItemValue = document.getElementById('todoList').value
+    // todos.push(todoItemValue)
+    // document.getElementById('todoList').value = ''
+    // renderView(todos)
+//}
