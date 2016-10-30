@@ -3,13 +3,13 @@ import TodoItem from './TodoItem'
 
 
 const Todos = (props) => {
-    const todoList = props.data.map((input, i) =>{
-        return <TodoItem data={input} key={i} />
+    const todoItems = props.todos.map((todo, i) =>{
+        return <TodoItem todo={todo} key={i} />
     })
     return (
-      <ul className="todoList">
-         {todoList}
-      </ul>
+      <div>
+         {todoItems}
+      </div>
    )
 }
 

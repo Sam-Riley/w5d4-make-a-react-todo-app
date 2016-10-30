@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 
 
-const TodoItem = (props) => (
+const TodoItems = (props) => (
     <div className="todoList">
-
-        {props.data}
-
+        {props.todo}
     </div>
 )
-export default TodoItem
+export default TodoItems
