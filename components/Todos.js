@@ -3,8 +3,8 @@ import TodoItem from './TodoItem'
 
 
 const Todos = (props) => {
-    const todoItems = props.todos.map((todo, i) =>{
-        return <TodoItem todos={todos.description} key={i} />
+    const todoItems = props.todos.map((todo, i) => {
+        return <TodoItem todo={todo} key={i} />
     })
     return (
       <div>

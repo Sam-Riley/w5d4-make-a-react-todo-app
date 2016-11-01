@@ -28,7 +28,7 @@ function addTodoItem() {
         description: todoItemValue,
     })
 // pushing the inputvalue into todos array
-    console.log(todos)
+    //console.log(todos)
     renderView(todos)
 //renderView is the React function that should display my array (or any component that is part of this array)
     var todos = []
@@ -36,8 +36,8 @@ function addTodoItem() {
 
 var renderView = (data) => {
     ReactDOM.render(
-        <Todos todos={data} />
-        //document.getElementById('todos')
+        <Todos todos={data} />,
+        document.getElementById('todoList'),
     )
 }
 
